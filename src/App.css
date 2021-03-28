@@ -1,0 +1,9 @@
+* {
+  margin: 0;
+}
+.tracker-app-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+}
