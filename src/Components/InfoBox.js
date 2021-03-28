@@ -8,7 +8,7 @@ function InfoBox({ title, cases, total }) {
         <CardContent>
           <Typography>{title}</Typography>
           <h2 className="infoBox-cases">{cases}</h2>
-          <h2 className="infoBox-total">{total} Total</h2>
+          <h4 className="infoBox-total">{total} Total</h4>
         </CardContent>
       </Card>
     </div>

@@ -11,7 +11,7 @@ function App() {
       <div className="app">
         <Navbar />
         <Switch>
-          <Route path="/" exact component={Tracker} />
+          <Route path="/" exact component={Vaccine} />
           <Route path="/tracker" component={Tracker} />
           <Route path="/vaccine" component={Vaccine} />
           <Route />
