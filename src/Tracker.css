@@ -1,0 +1,39 @@
+.tracker-app {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+.tracker-app-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-width: 400px;
+}
+.app_stats {
+  display: flex;
+  justify-content: space-between;
+}
+.infoBox {
+  margin: 20px;
+  border-radius: 10px !important;
+  text-transform: capitalize;
+  height: 45px;
+  width: 55px;
+}
+.infoBox:hover {
+  transform: scale(1.1);
+  height: auto;
+  width: max-content;
+  background-color: #487e95;
+  color: #f4f5db;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+}
+
+@media (max-width: 990px) {
+  .tracker-app {
+    flex-direction: column;
+  }
+  .infoBox {
+    font-size: 1vh;
+  }
+}

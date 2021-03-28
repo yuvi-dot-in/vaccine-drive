@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
-    <div className="navbar">
+    <nav className="navbar">
       <div className="name">
         <h1>Vaccination Drive</h1>
       </div>
@@ -16,7 +16,7 @@ function NavBar() {
           <h3>Vaccinate</h3>
         </Link>
       </div>
-    </div>
+    </nav>
   );
 }
 

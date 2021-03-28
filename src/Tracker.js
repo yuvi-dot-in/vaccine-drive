@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { FormControl, MenuItem, Select } from "@material-ui/core";
+import { Card, FormControl, MenuItem, Select } from "@material-ui/core";
 import InfoBox from "./Components/InfoBox";
+import "./Tracker.css";
 
 function Tracker() {
   const [countries, setCountries] = useState([]);
@@ -29,22 +30,32 @@ function Tracker() {
 
   return (
     <div className="tracker-app">
-      <div className="tracker-app-header">
-        <h1>Covid-19 Tracker</h1>
-        <FormControl className="drop-down">
-          <Select variant="outlined" onChange={onCountryChange} value={country}>
-            <MenuItem value="Worldwide">World Wide</MenuItem>
-            {countries.map((country) => (
-              <MenuItem value={country.value}>{country.name}</MenuItem>
-            ))}
-          </Select>
-        </FormControl>
+      <div className="app-left">
+        <div className="tracker-app-header">
+          <h1>Covid-19 Tracker</h1>
+          <FormControl className="drop-down">
+            <Select
+              variant="outlined"
+              onChange={onCountryChange}
+              value={country}
+            >
+              <MenuItem value="Worldwide">World Wide</MenuItem>
+              {countries.map((country) => (
+                <MenuItem value={country.value}>{country.name}</MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </div>
+        <div className="app_stats">
+          <InfoBox title="🦠Coronavirus Cases" cases={10000} total={120912} />
+          <InfoBox title="❤recovered" cases={10000} total={120912} />
+          <InfoBox title="💀Deaths" cases={10000} total={120912} />
+        </div>
       </div>
-      <div className="app_stats">
-        <InfoBox title="Coronavirus Cases" cases={10000} total={120912} />
-        <InfoBox title="recovered" cases={10000} total={120912} />
-        <InfoBox title="Deaths" cases={10000} total={120912} />
-      </div>
+      <Card className="app-right">
+        <h1>Graph</h1>
+        <p>lorem20</p>
+      </Card>
     </div>
   );
 }

@@ -1,25 +1,3 @@
 * {
   margin: 0;
 }
-.tracker-app-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 20px;
-}
-.app_stats {
-  display: flex;
-  justify-content: space-evenly;
-}
-.infoBox {
-  padding: 10px 30px;
-  border-radius: 10px !important;
-  text-align: center;
-  text-transform: capitalize;
-}
-.infoBox:hover {
-  transform: scale(1.1);
-  background-color: #487e95;
-  color: #f4f5db;
-  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
-}
