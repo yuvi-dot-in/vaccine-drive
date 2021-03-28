@@ -26,9 +26,7 @@ function Tracker() {
       });
   }, []);
   const onCountryChange = async (event) => {
-    console.log(countryCode);
     setCountryCode(event.target.value);
-    console.log(countryCode);
     const url =
       countryCode === "Worldwide"
         ? "https://disease.sh/v3/covid-19/all"
@@ -105,6 +103,7 @@ function Tracker() {
         </div>
         <Card className="app-right">
           <LineGraph
+            isTrue={true}
             casesType={casesType}
             color={"red"}
             bg={"rgb(255, 0, 0,0.5)"}

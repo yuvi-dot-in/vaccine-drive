@@ -38,8 +38,8 @@ function Vaccine() {
       .then((response) => response.json())
       .then((data) => {
         setCountryInfo(data);
-        console.log(data.countryInfo);
-        // setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
+        console.log(data.countryInfo.lat);
+        setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
         setMapZoom(4);
       });
   };
@@ -106,6 +106,7 @@ function Vaccine() {
         </div>
         <Card className="app-right">
           <LineGraph
+            isTrue={false}
             casesType={casesType}
             color={"#0dff4d"}
             bg={"rgb(13, 255, 77,0.5)"}

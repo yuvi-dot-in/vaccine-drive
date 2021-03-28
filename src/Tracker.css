@@ -39,7 +39,7 @@
   height: auto;
 
   background-color: #23689b;
-  color: #f4f5db;
+  color: #ffff;
   transition: cubic-bezier(0.22, 0.61, 0.36, 1) 5s;
 }
 .app-right {
@@ -50,6 +50,9 @@
 }
 .graph {
   min-width: 900px;
+}
+a:active {
+  background-color: #f4f5db;
 }
 @media (max-width: 990px) {
   .tracker-app {

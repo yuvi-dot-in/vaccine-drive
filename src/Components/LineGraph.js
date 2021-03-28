@@ -47,14 +47,16 @@ const options = {
   },
 };
 
-const buildChartData = (data, casesType) => {
+const buildChartData = (data, casesType, isTrue) => {
   let chartData = [];
   let lastDataPoint;
   for (let date in data.cases) {
     if (lastDataPoint) {
       let newDataPoint = {
         x: date,
-        y: data[casesType][date] - lastDataPoint,
+        y:
+          (data[casesType][date] - lastDataPoint) *
+          (isTrue ? 1 : Math.random() * 10),
       };
       chartData.push(newDataPoint);
     }
@@ -63,7 +65,7 @@ const buildChartData = (data, casesType) => {
   return chartData;
 };
 
-function LineGraph({ casesType, bg, color }) {
+function LineGraph({ casesType, bg, color, isTrue }) {
   const [data, setData] = useState({});
 
   useEffect(() => {
@@ -73,9 +75,8 @@ function LineGraph({ casesType, bg, color }) {
           return response.json();
         })
         .then((data) => {
-          let chartData = buildChartData(data, casesType);
+          let chartData = buildChartData(data, casesType, isTrue);
           setData(chartData);
-          console.log(chartData);
           // buildChart(chartData);
         });
     };
