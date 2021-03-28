@@ -3,13 +3,13 @@ import numeral from "numeral";
 import { MapContainer, Circle, Popup } from "react-leaflet";
 
 const casesTypeColors = {
+  //   cases: {
+  //     hex: "#CC1034",
+  //     rgb: "rgb(204, 16, 52)",
+  //     half_op: "rgba(204, 16, 52, 0.5)",
+  //     multiplier: 800,
+  //   },
   cases: {
-    hex: "#CC1034",
-    rgb: "rgb(204, 16, 52)",
-    half_op: "rgba(204, 16, 52, 0.5)",
-    multiplier: 800,
-  },
-  recovered: {
     hex: "#7dd71d",
     rgb: "rgb(125, 215, 29)",
     half_op: "rgba(125, 215, 29, 0.5)",
@@ -38,7 +38,7 @@ export const sortData = (data) => {
 export const prettyPrintStat = (stat) =>
   stat ? `+${numeral(stat).format("0.0a")}` : "+0";
 
-export const showDataOnMap1 = (data, casesType = "cases") =>
+export const showDataOnMap2 = (data, casesType = "cases") =>
   data.map((country) => (
     <Circle
       center={[country.countryInfo.lat, country.countryInfo.long]}

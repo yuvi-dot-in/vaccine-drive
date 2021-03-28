@@ -105,7 +105,11 @@ function Vaccine() {
           </div>
         </div>
         <Card className="app-right">
-          <LineGraph casesType={casesType} />
+          <LineGraph
+            casesType={casesType}
+            color={"#0dff4d"}
+            bg={"rgb(13, 255, 77,0.5)"}
+          />
         </Card>
       </div>
       <div className="app-bottom">
@@ -114,6 +118,7 @@ function Vaccine() {
           casesType={casesType}
           center={mapCenter}
           zoom={mapZoom}
+          isTrue={false}
         />
       </div>
     </div>

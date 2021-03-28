@@ -104,7 +104,11 @@ function Tracker() {
           </div>
         </div>
         <Card className="app-right">
-          <LineGraph casesType={casesType} />
+          <LineGraph
+            casesType={casesType}
+            color={"red"}
+            bg={"rgb(255, 0, 0,0.5)"}
+          />
         </Card>
       </div>
       <div className="app-bottom">
@@ -113,6 +117,7 @@ function Tracker() {
           casesType={casesType}
           center={mapCenter}
           zoom={mapZoom}
+          isTrue={true}
         />
       </div>
     </div>
