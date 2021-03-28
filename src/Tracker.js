@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
-import {
-  FormControl,
-  FormControlLabel,
-  Menu,
-  MenuItem,
-  Select,
-} from "@material-ui/core";
+import { FormControl, MenuItem, Select } from "@material-ui/core";
+import InfoBox from "./Components/InfoBox";
 
 function Tracker() {
   const [countries, setCountries] = useState([]);
-  const [con, setCon] = useState("World Wide");
+  const [country, setCountry] = useState("Worldwide");
+
+  const onCountryChange = (e) => {
+    setCountry(e.target.value);
+  };
 
   useEffect(() => {
     const getCountries = async () => {
@@ -29,19 +28,22 @@ function Tracker() {
   }, []);
 
   return (
-    <div class="tracker-app">
-      <div class="tracker-app-header">
+    <div className="tracker-app">
+      <div className="tracker-app-header">
         <h1>Covid-19 Tracker</h1>
-        <FormControl class="drop-down">
-          <Select variant="outlined" value={con}>
-            {console.log(con)}
-            <MenuItem value="world">World Wide</MenuItem>
+        <FormControl className="drop-down">
+          <Select variant="outlined" onChange={onCountryChange} value={country}>
+            <MenuItem value="Worldwide">World Wide</MenuItem>
             {countries.map((country) => (
               <MenuItem value={country.value}>{country.name}</MenuItem>
             ))}
-            {/* <MenuItem value="world">${coun}</MenuItem> */}
           </Select>
         </FormControl>
+      </div>
+      <div className="app_stats">
+        <InfoBox title="Coronavirus Cases" cases={10000} total={120912} />
+        <InfoBox title="recovered" cases={10000} total={120912} />
+        <InfoBox title="Deaths" cases={10000} total={120912} />
       </div>
     </div>
   );

@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
-    <div class="navbar">
-      <div class="name">
+    <div className="navbar">
+      <div className="name">
         <h1>Vaccination Drive</h1>
       </div>
-      <div class="option">
+      <div className="option">
         <Link to={"/tracker"}>
           <h3>Covid Tracker</h3>
         </Link>

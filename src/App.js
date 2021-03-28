@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 function App() {
   return (
     <Router>
-      <div class="app">
+      <div className="app">
         <Navbar />
         <Switch>
           <Route path="/" exact component={Tracker} />
